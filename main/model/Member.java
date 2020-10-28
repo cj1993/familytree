@@ -33,6 +33,14 @@ public class Member {
 		}
 	}
 	
+	public List<Member> getParents() {
+		List<Member> parents = new ArrayList<Member>();
+		parents.add(this.getFather());
+		parents.add(this.getMother());
+		
+		return parents;
+	}
+	
 	public boolean hasChildren() {
 		return !(this.children == null || this.children.isEmpty());
 	}
