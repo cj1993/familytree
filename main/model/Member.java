@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Member {
@@ -21,6 +22,19 @@ public class Member {
 		this.name = name;
 		this.isMale = isMale;
 		this.source = source;
+	}
+	
+	public void addChild(Member child) {
+		if (this.getChildren() == null) {
+			this.setChildren(new ArrayList<Member>());
+			this.getChildren().add(child);
+		} else {
+			this.getChildren().add(child);
+		}
+	}
+	
+	public boolean hasChildren() {
+		return !(this.children == null || this.children.isEmpty());
 	}
 	
 	public String getName() {
